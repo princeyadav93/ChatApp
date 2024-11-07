@@ -41,9 +41,10 @@
 <script setup>
 import { io } from 'socket.io-client';
 import { useChatStore } from '~/store/chatRoom';
+const config = useRuntimeConfig();
 
 // const socket = io('https://chatbackend-qcrc.onrender.com');
-const socket = io('http://localhost:3001');
+const socket = io(config.public.backendUrl);
 const route = useRoute();
 const chatStore = useChatStore();
 
